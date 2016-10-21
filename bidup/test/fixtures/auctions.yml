@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  title: MyString
+  description: MyText
+  auction_img: MyString
+  reserve: 9.99
+  length_of_auction: 1
+  charity: MyString
+
+two:
+  user: two
+  title: MyString
+  description: MyText
+  auction_img: MyString
+  reserve: 9.99
+  length_of_auction: 1
+  charity: MyString
