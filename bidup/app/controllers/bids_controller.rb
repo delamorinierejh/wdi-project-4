@@ -15,14 +15,27 @@ class BidsController < ApplicationController
 
   # POST /bids
   def create
-    @bid = Bid.new(bid_params)
+  @bid = current_user.bids.new(bid_params)
 
+  respond_to do |format|
     if @bid.save
-      render json: @bid, status: :created, location: @bid
+      format.html { redirect_to @bid, notice: 'Auction was successfully created.' }
+      format.json { render :show, status: :created, location: @bid }
     else
-      render json: @bid.errors, status: :unprocessable_entity
+      format.html { render :new }
+      format.json { render json: @bid.errors, status: :unprocessable_entity }
     end
   end
+end
+  # def create
+  #   @bid = Bid.new(bid_params)
+  #
+  #   if @bid.save
+  #     render json: @bid, status: :created, location: @bid
+  #   else
+  #     render json: @bid.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /bids/1
   def update
