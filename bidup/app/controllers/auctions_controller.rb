@@ -1,5 +1,6 @@
 class AuctionsController < ApplicationController
   before_action :set_auction, only: [:show, :update, :destroy]
+  # before_action :destroy_bids, only: :destroy
 
   # GET /auctions
   def index
@@ -37,6 +38,7 @@ class AuctionsController < ApplicationController
 
   # DELETE /auctions/1
   def destroy
+    @auction.bids.destroy_all
     @auction.destroy
   end
 
@@ -45,6 +47,7 @@ class AuctionsController < ApplicationController
   def set_auction
     @auction = Auction.find(params[:id])
   end
+
 
   # Only allow a trusted parameter "white list" through.
   def auction_params
