@@ -109,7 +109,7 @@ u1.bids.create!(
 
 u3.bids.create!(
   amount: 125,
-  auction_id: 3
+  auction_id: 1
 )
 
 u1.bids.create!(
