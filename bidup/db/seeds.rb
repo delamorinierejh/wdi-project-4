@@ -24,7 +24,7 @@ u2 = User.create!(
 
 u1.auctions.create!(
   title: "Dinner for two",
-  description: "I'm going to cook you dinner",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   auction_img: "http://fillmurray.com/g/200/200",
   reserve: 100,
   end_date: (Time.now + (60*60*3)),
@@ -33,7 +33,7 @@ u1.auctions.create!(
 
 u2.auctions.create!(
   title: "Round of golf",
-  description: "18 holes at Rushmore",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   auction_img: "http://fillmurray.com/200/200",
   reserve: 50,
   end_date: (Time.now + (60*60*6)),
@@ -42,7 +42,7 @@ u2.auctions.create!(
 
 u2.auctions.create!(
   title: "Pizza",
-  description: "Pizzzzzzzz",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   auction_img: "http://fillmurray.com/200/200",
   reserve: 30,
   end_date: (Time.now + (60*60*2)),

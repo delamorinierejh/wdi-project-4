@@ -4,6 +4,7 @@ class Auction < ApplicationRecord
   validates :user_id, presence: true
   validates :charity, presence: true
   validates :title, length: { minimum: 1}, allow_blank: false
+  validates :description, length: { maximum: 450}, allow_blank: false
 
   before_create :set_default_status
 
