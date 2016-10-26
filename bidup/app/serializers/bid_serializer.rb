@@ -1,4 +1,5 @@
 class BidSerializer < ActiveModel::Serializer
-  attributes :id, :amount
-  has_one :user
+  attributes :id, :amount, :auction, :user
+  belongs_to :user
+  belongs_to :auction
 end

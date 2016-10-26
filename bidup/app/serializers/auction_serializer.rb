@@ -1,12 +1,11 @@
 class AuctionSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :auction_img, :reserve, :length_of_auction, :charity
-  has_one :user
-
-  def length
-    object.body.length
-  end
+  attributes :id, :title, :description, :auction_img, :reserve, :charity, :status, :start_date, :end_date
+  belongs_to :user
+  has_many :bids
 
   def url
     Rails.application.routes.url_helpers.post_url object, only_path: true
   end
+
+
 end

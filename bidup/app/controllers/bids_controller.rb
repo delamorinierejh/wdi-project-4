@@ -17,25 +17,13 @@ class BidsController < ApplicationController
   def create
   @bid = current_user.bids.new(bid_params)
 
-  respond_to do |format|
-    if @bid.save
-      format.html { redirect_to @bid, notice: 'Auction was successfully created.' }
-      format.json { render :show, status: :created, location: @bid }
-    else
-      format.html { render :new }
-      format.json { render json: @bid.errors, status: :unprocessable_entity }
-    end
+  if @bid.save
+    render json: @bid, status: :created, location: @bid
+  else
+    render json: @bid.errors, status: :unprocessable_entity
   end
+
 end
-  # def create
-  #   @bid = Bid.new(bid_params)
-  #
-  #   if @bid.save
-  #     render json: @bid, status: :created, location: @bid
-  #   else
-  #     render json: @bid.errors, status: :unprocessable_entity
-  #   end
-  # end
 
   # PATCH/PUT /bids/1
   def update
@@ -59,6 +47,6 @@ end
 
     # Only allow a trusted parameter "white list" through.
     def bid_params
-      params.require(:bid).permit(:amount, :user_id)
+      params.require(:bid).permit(:amount, :auction_id, :user_id)
     end
 end

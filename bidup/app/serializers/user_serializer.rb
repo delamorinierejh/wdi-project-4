@@ -1,5 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
   has_many :auctions
+  has_many :bids
   attributes :id, :username, :full_name
 
   def full_name
