@@ -52,6 +52,16 @@ u5 = User.create!(
   profile_img: "http://i.huffpost.com/gen/2111270/thumbs/o-HESTON-BLUMENTHAL-570.jpg?8"
 )
 
+u6 = User.create!(
+  username: "virgin",
+  first_name: "Virgin",
+  last_name: "Atlantic",
+  email: "virgin@virgin.com",
+  password: "password",
+  password_confirmation: "password",
+  profile_img: "https://pbs.twimg.com/profile_images/1705975355/va_twitter_p_r3d_rgbL.jpg"
+)
+
 u1.auctions.create!(
   title: "Dinner for two",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -99,6 +109,16 @@ u5.auctions.create!(
   end_date: (Time.now + (60*60*3)),
   charity: 188,
 )
+
+u6.auctions.create!(
+  title: "Flights to NYC",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  auction_img: "https://www.wired.com/images_blogs/gadgetlab/2012/05/0516_virgin_660.jpg",
+  reserve: 1500,
+  end_date: (Time.now + (60*60*5)),
+  charity: 88,
+)
+
 
 u2.bids.create!(
   amount: 105,
