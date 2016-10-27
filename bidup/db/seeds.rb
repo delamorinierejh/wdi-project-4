@@ -59,6 +59,7 @@ u1.auctions.create!(
   reserve: 100,
   end_date: (Time.now + (60*60*3)),
   charity: 184362,
+  high_bid_user_id: 3
 )
 
 u2.auctions.create!(
@@ -68,6 +69,7 @@ u2.auctions.create!(
   reserve: 60,
   end_date: (Time.now + (60*60*6)),
   charity: 186147,
+  high_bid_user_id: 1
 )
 
 u3.auctions.create!(
@@ -86,6 +88,7 @@ u4.auctions.create!(
   reserve: 50,
   end_date: (Time.now + (30)),
   charity: 88,
+  high_bid_user_id: 2
 )
 
 u5.auctions.create!(
@@ -112,7 +115,7 @@ u3.bids.create!(
   auction_id: 1
 )
 
-u1.bids.create!(
+u2.bids.create!(
   amount: 140,
   auction_id: 4
 )

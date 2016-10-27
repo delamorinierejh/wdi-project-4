@@ -1,6 +1,6 @@
 class BidsController < ApplicationController
   before_action :set_bid, only: [:show, :update, :destroy]
-
+  
   # GET /bids
   def index
     @bids = Bid.all
