@@ -1,10 +1,11 @@
 class AuctionsController < ApplicationController
   before_action :set_auction, only: [:show, :update, :destroy]
+  # before_action :update_auctions
   # before_action :destroy_bids, only: :destroy
 
   # GET /auctions
   def index
-    @auctions = Auction.all
+    @auctions = Auction.where(status:"live")
 
     render json: @auctions
   end
@@ -48,6 +49,12 @@ class AuctionsController < ApplicationController
     @auction = Auction.find(params[:id])
   end
 
+  # def update_auctions
+  #   Auction.where("end_date < ?", Time.now).find_each do |auction|
+  #     auction.update(status: "finished")
+  #     p "#{auction.title} has finished"
+  #   end
+  # end
 
   # Only allow a trusted parameter "white list" through.
   def auction_params
