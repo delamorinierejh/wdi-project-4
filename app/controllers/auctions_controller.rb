@@ -1,6 +1,7 @@
 class AuctionsController < ApplicationController
   before_action :set_auction, only: [:show, :update, :destroy]
   before_action :update_auctions
+  # before_action :process_params, only: [:create, :update]
   # before_action :destroy_bids, only: :destroy
 
   # GET /auctions
@@ -17,9 +18,14 @@ class AuctionsController < ApplicationController
 
   # POST /auctions
   def create
+    # file_arr = params.values.find_all { |value|
+    #   value.class == ActionDispatch::Http::UploadedFile
+    # }
     @auction = current_user.auctions.new(auction_params)
+    @auction.upload_img = params[:file]
 
     if @auction.save
+      p @auction
       render json: @auction, status: :created, location: @auction
     else
       render json: @auction.errors, status: :unprocessable_entity
@@ -58,6 +64,16 @@ class AuctionsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def auction_params
-    params.require(:auction).permit(:user_id, :title, :description, :auction_img, :reserve, :length_of_auction, :charity, :start_date, :end_date, :high_bid_user_id)
+    params.require(:auction).permit(:user_id, :title, :description, :auction_img, :reserve, :length_of_auction, :charity, :start_date, :end_date, :high_bid_user_id, :upload_img)
   end
+
+  def process_params
+     params[:auction] = JSON.parse(params[:auction])
+                                .with_indifferent_access
+
+     if params[:file]
+       params[:auction][:upload_img] = params[:file]
+     end
+  end
+
 end

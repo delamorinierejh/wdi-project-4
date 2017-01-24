@@ -65,7 +65,7 @@ u6 = User.create!(
 u1.auctions.create!(
   title: "Dinner for two",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  auction_img: "http://golf4good.org/wp-content/uploads/2016/05/dinner.jpg",
+  auction_img: "http://golf4good.org/wp-content/uploads/2016/05/dinner.jpg"
   reserve: 100,
   end_date: (Time.now + (60*60*3)),
   charity: 184362,
@@ -75,7 +75,7 @@ u1.auctions.create!(
 u2.auctions.create!(
   title: "Round of golf",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  auction_img: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Golf_ball_resting_near_fairway_wood.jpg",
+  auction_img:  "https://upload.wikimedia.org/wikipedia/commons/6/6e/Golf_ball_resting_near_fairway_wood.jpg",
   reserve: 60,
   end_date: (Time.now + (60*60*6)),
   charity: 186147,

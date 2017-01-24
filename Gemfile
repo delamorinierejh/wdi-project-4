@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'dotenv-rails', :groups => [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
@@ -37,5 +37,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# gem "paperclip", "~> 5.0.0"
+gem 'carrierwave', "~> 1.0.0"
+gem 'aws-sdk'
+gem "fog-aws"
 
 ruby "2.3.1"
